@@ -1,0 +1,31 @@
+<figure #mainBG class="bg-main" [style.background]="imageColor">
+    <img [src]="imageSrc" alt="main-bg" (load)="imageLoaded()">
+</figure>
+
+<div class="change-bg-container text-white ">
+    <div #changeBg class="change-bg row mx-0 bg-dark rounded-end g-3 py-1 toggle-margin-left">
+        <div #loaderBtn class="col-6 my-2" (click)="changeImg()">
+            <div class="random-img rounded-3 cursor-pointer">
+                <i class="fa-solid fa-rotate fs-5"></i>
+            </div>
+            <h6 class="fw-normal text-center mt-1 ">Random Image</h6>
+        </div>
+
+        <div class=" col-6 my-2">
+            <div class="solid-colors rounded-3 cursor-pointer p-2 " data-bs-toggle="modal"
+                data-bs-target="#solidColorsModal">
+            </div>
+            <h6 class="fw-normal text-center mt-1">Solid Colors</h6>
+        </div>
+
+        <div class=" col-6 my-2">
+            <div class="gradient-colors rounded-3 cursor-pointer p-2" data-bs-toggle="modal"
+                data-bs-target="#gradientColorsModal"></div>
+            <h6 class="fw-normal text-center mt-1 ">Gradient Colors</h6>
+        </div>
+    </div>
+
+    <button class="change-bg-btn btn btn-dark rounded-end rounded-start-0 " (click)="toggleMargin()">
+        <i class="fa-solid fa-gear fa-spin"></i>
+    </button>
+</div>

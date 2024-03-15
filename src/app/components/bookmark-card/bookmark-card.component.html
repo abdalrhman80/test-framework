@@ -1,0 +1,22 @@
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
+<p-menu #OptionsMenu [model]="menuItems" [popup]="true" appendTo="body"></p-menu>
+
+<div class="bookmark m-2" id="bookmark">
+    <div class=" edit-bookmark cursor-pointer rounded-circle"
+        (click)="showOptions(bookmark.bookmarkId, bookmark.bookmarkTitle,bookmark.bookmarkUrl ,$event)">
+        <i class="fa-solid fa-pen p-2"></i>
+    </div>
+    <a [href]="bookmark.bookmarkUrl" target="_blank">
+        <div class="bookmark-item rounded-1 text-center cursor-pointer overflow-hidden">
+            <figure class="favicon mt-3 mx-auto" *ngIf="!faviconError">
+                <img [src]="bookmark.bookmarkUrl+'/favicon.ico'" class="w-100" (error)="faviconError=true"
+                    [alt]="bookmark.bookmarkTitle">
+            </figure>
+            <div class="noFavicon mt-3 mb-2" *ngIf="faviconError">
+                {{bookmark.bookmarkTitle.toLocaleUpperCase()|slice:0:1}}
+            </div>
+            <p class=" bookmark-title pb-1 px-1 ">{{bookmark.bookmarkTitle}}</p>
+        </div>
+    </a>
+</div>

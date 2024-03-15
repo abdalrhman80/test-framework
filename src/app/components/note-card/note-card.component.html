@@ -1,0 +1,27 @@
+<p-toast [breakpoints]="{'567px': {width: '100%', right: '0px'}}"></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
+<div class="col-12 position-relative" >
+    <p-accordion [multiple]="false" *ngIf="note.noteContent; else noContent">
+        <p-accordionTab [header]="note.noteTitle">
+            <p class="noteContent mb-0 pb-2 ">{{note.noteContent}}</p>
+        </p-accordionTab>
+
+        <div class="note-actions note-actions-accordion d-flex justify-content-end me-1">
+            <i class="fa-solid fa-pen-to-square me-1 cursor-pointer"
+                [routerLink]="['updateNote',note.noteId,note.noteTitle,note.noteContent]"></i>
+            <i class="fa-solid fa-trash-alt ms-1 cursor-pointer" (click)="deleteNote($event,note.noteId)"></i>
+        </div>
+    </p-accordion>
+
+    <ng-template #noContent>
+        <div class="noContentNote mb-1 rounded d-flex justify-content-between">
+            <h6 class="mb-0">{{note.noteTitle}}</h6>
+            <div class="note-actions d-flex justify-content-end">
+                <i class="fa-solid fa-pen-to-square me-1 cursor-pointer"
+                    [routerLink]="['updateNote',note.noteId,note.noteTitle,note.noteContent]"></i>
+                <i class="fa-solid fa-trash-alt ms-1 cursor-pointer" (click)="deleteNote($event,note.noteId)"></i>
+            </div>
+        </div>
+    </ng-template>
+</div>

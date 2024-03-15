@@ -1,0 +1,16 @@
+<div class="todos mx-auto p-3 pt-0 p-md-0 ">
+    <div class="todos-collection row justify-content-center align-items-center" cdkDropList [cdkDropListData]="todos"
+        (cdkDropListDropped)="drop($event)">
+
+        <app-todo-card *ngFor="let todo of todos" [todo]="todo" cdkDrag></app-todo-card>
+
+        <div class="col-12">
+            <div class="d-flex justify-content-center mt-3 fw-light ">
+                <button routerLink="addTodo" type="button" class="add-todo btn mx-1 mb-1 shadow">
+                    <i class="fab fa-plus me-2 "></i>
+                    <span>Add</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

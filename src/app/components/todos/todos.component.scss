@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.todos {
+    width: 75%;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.add-todo {
+    color: $color-white;
+    background-color: rgba($color: $color-black, $alpha: 0.7);
+}

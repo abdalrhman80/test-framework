@@ -1,0 +1,11 @@
+@import '../../variables.scss';
+
+.add-bookmark {
+    color: $color-white;
+    background-color: rgba($color: $color-black, $alpha: 0.7);
+}
+
+app-bookmark-card {
+    @include flex;
+    flex-wrap: wrap;
+}

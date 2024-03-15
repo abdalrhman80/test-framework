@@ -1,0 +1,13 @@
+<section class="tabs px-5 pb-5 d-flex justify-content-center align-items-center ">
+    <div class="tabs-content rounded-3 p-2">
+        <div class="tab-tile cursor-pointer tab-bookmark me-1 " [routerLink]="['/bookmarks']" [routerLinkActive]="['active-tab']">
+            <i class="fa-regular fa-bookmark "></i>
+        </div>
+        <div class="tab-tile cursor-pointer tab-todo mx-1" [routerLink]="['/todos']" [routerLinkActive]="['active-tab']">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="tab-tile cursor-pointer tab-notes ms-1" [routerLink]="['/notes']" [routerLinkActive]="['active-tab']">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+$color-black: black;
+$color-white: white;
+$checked-bg: rgb(9, 218, 89);
+$selection-bg: #EFF6FF;
+$selection-color: #1D4ED8;
+$btn-success: #23a96b;
+$update-btn: #ffc107;
+$delete-btn: #dc3545;
+$gradient-1: #f8b5a5;
+$gradient-2: #e2d2fd;
+$gradient-3: #a2ffff;
+$gradient-4: #ffbdde;
+$gradient-5: #d2cdff;
+$gradient-6: #5fffbc;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   

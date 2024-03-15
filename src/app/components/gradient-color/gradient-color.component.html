@@ -1,0 +1,69 @@
+<div class="gradient-color">
+    <div class="modal fade" id="gradientColorsModal" tabindex="-1" aria-labelledby="gradientColorsModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header justify-content-between">
+                    <h1 class="modal-title fs-5" id="gradientColorsModal">Gradient Colors</h1>
+                    <i class="fa-solid fa-x cursor-pointer" data-bs-dismiss="modal" aria-label="Close"></i>
+                </div>
+                <p-scrollPanel [style]="{ width: '100%', height: '300px'}">
+                    <div class="modal-body">
+                        <div class="row gx-2 gy-3">
+                            <div class="col-6">
+                                <button class="gradients gradient-one rounded btn w-100"
+                                    style=" background: linear-gradient(to left, #bbd2c5, #536976, #292e49);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-two rounded btn w-100"
+                                    style=" background: linear-gradient(to right, #ad5389, #3c1053);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-three rounded btn w-100"
+                                    style="background: linear-gradient(125.83deg, #2980b9 0%, #2c3e50 99.09%);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-four rounded btn w-100"
+                                    style=" background: linear-gradient(90deg, #24c6dc 0.64%, #514a9d 99.36%);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-five rounded btn w-100"
+                                    style="  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-six rounded btn w-100"
+                                    style=" background:radial-gradient(80% 80% at 101.61% 76.99%, rgb(45, 2, 100) 0%, rgb(3, 0, 35) 100%)"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-seven rounded btn w-100"
+                                    style="background: linear-gradient(323.02deg, rgb(221, 113, 49) 18.65%, rgb(251, 212, 96) 82.73%);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-eight rounded btn w-100"
+                                    style="background: linear-gradient(127.39deg, rgb(133, 27, 106) 6.04%, rgb(200, 53, 83) 86.97%);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-night rounded btn w-100"
+                                    style="background: linear-gradient(to left, #5a3f37, #2c7744);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="gradients gradient-ten rounded btn w-100"
+                                    style="background: linear-gradient(130.39deg, rgb(254, 111, 76) 9.83%, rgb(197, 54, 70) 85.25%);"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                        </div>
+                    </div>
+                </p-scrollPanel>
+            </div>
+        </div>
+    </div>
+</div>

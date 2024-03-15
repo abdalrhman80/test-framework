@@ -1,0 +1,27 @@
+<p-toast [breakpoints]="{'567px': {width: '100%', right: '0px'}}"></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
+<p-dialog header="Note Details" [visible]="true" [modal]="true" [style]="{ width: '50rem' }"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [draggable]="false" [closable]="false">
+    <ng-template pTemplate="header">
+        <h4 class="font-bold">New Todo </h4>
+    </ng-template>
+
+    <ng-template pTemplate="content">
+        <form [formGroup]="addTodoForm" (ngSubmit)="addNewTodo(addTodoForm)"
+            (keydown)="$event.code === 'Escape' ? this._Router.navigate(['/todos']) : null">
+            <div class="card mt-3 ">
+                <input [autofocus]="true" type="text" id="todoTitle" pInputText formControlName="todoTitle"
+                    placeholder="Note Title" />
+            </div>
+            <!-- <p *ngIf="addTodoForm.get('todoTitle')?.errors && addTodoForm.get('todoTitle')?.touched"
+                class="text-danger mt-2 mb-1 ">Input is required</p> -->
+            <div class="buttons d-flex justify-content-end mt-2">
+                <p-button label="Close" [raised]="true" severity="secondary" class="fw-light me-2"
+                    (click)="this._Router.navigate(['/todos'])"></p-button>
+                <p-button type="Save" label="Submit" severity="success" [rounded]="true"
+                    [disabled]="!addTodoForm.valid"></p-button>
+            </div>
+        </form>
+    </ng-template>
+</p-dialog>

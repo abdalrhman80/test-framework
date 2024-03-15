@@ -1,0 +1,34 @@
+<p-toast [breakpoints]="{'567px': {width: '100%', right: '0px'}}"></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
+<p-dialog header="Add Bookmark" [visible]="true" [modal]="true" [style]="{ width: '50rem' }"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [draggable]="false" [closable]="false">
+    <ng-template pTemplate="header">
+        <h4 class="font-bold">Add Bookmark</h4>
+    </ng-template>
+
+    <ng-template pTemplate="content">
+        <form [formGroup]="addBookmarkForm" (ngSubmit)="addNewBookmark(addBookmarkForm)"
+            (keyup)="$event.code === 'Escape' ? _Router.navigate(['/bookmarks']) : null">
+            <div class="card mb-0 mt-3">
+                <input [autofocus]="true" type="text" id="bookmarkTitle" pInputText formControlName="bookmarkTitle"
+                    placeholder="e.g Google" class="w-100" />
+            </div>
+            <!-- <p class="text-danger my-1"
+                *ngIf="addBookmarkForm.get('bookmarkTitle')?.errors && addBookmarkForm.get('bookmarkTitle')?.touched ">
+                Input is required</p> -->
+            <div class="card mt-3 mb-0">
+                <input type="url" id="bookmarkUrl" pInputText formControlName="bookmarkUrl"
+                    placeholder="e.g https://www.google.com" class="w-100" />
+            </div>
+            <!-- <p class="text-danger my-1" *ngIf="addBookmarkForm.get('bookmarkUrl')?.errors?.['pattern']">
+                URL must be valid</p> -->
+            <div class="buttons d-flex justify-content-end mt-3">
+                <p-button label="Close" [raised]="true" severity="secondary" class="fw-light me-2"
+                    (click)="_Router.navigate(['/bookmarks'])"></p-button>
+                <p-button type="Save" label="Submit" severity="success" [rounded]="true"
+                    [disabled]="!addBookmarkForm.valid"></p-button>
+            </div>
+        </form>
+    </ng-template>
+</p-dialog>

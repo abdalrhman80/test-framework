@@ -1,0 +1,18 @@
+<p-toast [breakpoints]="{'567px': {width: '100%', right: '0px'}}"></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
+<div class="col-12">
+    <div class="todo-item my-1 p-3 rounded-3 d-flex justify-content-between">
+        <div class="form-check mb-0">
+            <input (click)="_TodoService.makeCompleted(todo.todoId)" [checked]="todo.isCompleted"
+                class="form-check-input cursor-pointer mt-0 mb-1" type="checkbox" [id]="todo.todoId">
+            <label class="form-check-label cursor-pointer  ms-2 mb-1" [for]="todo.todoId">
+                {{todo.todoTitle}}</label>
+        </div>
+        <div class="todo-actions mt-1 d-flex justify-content-end">
+            <i [routerLink]="['updateTodo',todo.todoId,todo.todoTitle]"
+                class="fa-solid fa-pen-to-square me-1 cursor-pointer"></i>
+            <i (click)="deleteTodo($event,todo.todoId)" class="fa-solid fa-trash-alt ms-1 cursor-pointer"></i>
+        </div>
+    </div>
+</div>

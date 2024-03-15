@@ -1,0 +1,18 @@
+<p-toast [breakpoints]="{'567px': {width: '100%', right: '0px'}}"></p-toast>
+
+<div class="notes mx-auto p-2 pt-0 p-md-0 ">
+    <div class="notes-collection row justify-content-center align-items-center" cdkDropList [cdkDropListData]="notes"
+        (cdkDropListDropped)="drop($event)">
+        <app-note-card *ngFor="let noteItem of notes; let i = index" [note]="noteItem" cdkDrag></app-note-card>
+
+        <div class="col-12">
+            <div class="d-flex justify-content-center mt-3 fw-light ">
+                <button routerLink="addNote" icon="pi pi-external-link" type="button"
+                    class="add-note btn mx-1 mb-1 shadow">
+                    <i class="fab fa-plus me-2 "></i>
+                    <span>Add</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

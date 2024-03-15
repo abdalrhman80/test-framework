@@ -1,0 +1,72 @@
+@import "../../variables.scss";
+
+.bg-main {
+    height: 100vh;
+    width: 100vw;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: fixed;
+        z-index: -1;
+    }
+}
+
+.change-bg-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include flex;
+    z-index: 111;
+
+    .toggle-margin-left {
+        margin-left: -240px !important;
+
+        @media screen and (max-width: 768px) {
+            margin-left: -220px !important;
+        }
+    }
+
+    .change-bg {
+        width: 240px;
+        height: 240px;
+        transition: all 0.3s;
+
+        .random-img,
+        .solid-colors,
+        .gradient-colors {
+            height: 90%;
+            @include flex;
+
+            i {
+                color: #dae2ff;
+            }
+        }
+
+        h6 {
+            font-size: 14px;
+        }
+
+        .random-img {
+            background-color: #607274;
+        }
+
+        .solid-colors {
+            background-color: rgb(21, 30, 154);
+        }
+
+        .gradient-colors {
+            background: linear-gradient(125.83deg, rgb(57, 45, 209) 0%, rgb(169, 27, 120) 99.09%);
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 220px;
+            height: 220px;
+
+            h6 {
+                font-size: 13px;
+            }
+        }
+    }
+}

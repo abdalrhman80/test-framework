@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import 'app/variables.scss';
+
+::selection {
+    background-color: $selection-bg;
+    color: $selection-color;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    // overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn:first-child:active {
+    border-color: rgba($color: $color-white, $alpha: 0.8);
+    background-color: rgba($color: $color-black, $alpha: 0.5);
+}
+
+:host ::ng-deep .p-inputtext {
+    color: #111111;
+}
+
+.todo-actions i,
+.note-actions i {
+    color: rgba($color: $color-white, $alpha: 0.7);
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s, color 0.2s ease-in-out;
+
+    &:hover {
+        &:first-of-type:hover {
+            color: $update-btn;
+        }
+
+        &:last-of-type:hover {
+            color: $delete-btn;
+        }
+    }
+}
+
+:host ::ng-deep p-scrollpanel-content {
+    padding: 0 18px 18px 0;
+}
+
+@media screen and (max-width: 768px) {
+    :host ::ng-deep p-scrollpanel-content {
+        padding: 0 18px 18px 0;
+    }
+}
+
+ul {
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-content {
+    background-color: #202429;
+    color: white;
+    width: 95%;
+    margin: auto;
+
+    .colors,
+    .gradients {
+        height: 130px;
+    }
+}

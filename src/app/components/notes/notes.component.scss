@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.notes {
+    width: 75%;
+}
+
+.add-note {
+    color: $color-white;
+    background-color: rgba($color: $color-black, $alpha: 0.7);
+}
+
+@media screen and (max-width: 768px) {
+    .notes {
+        width: 100%;
+    }
+}

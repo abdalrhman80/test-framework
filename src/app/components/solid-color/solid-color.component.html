@@ -1,0 +1,66 @@
+<div class="solid-color">
+    <div class="modal fade" id="solidColorsModal" tabindex="-1" aria-labelledby="solidColorsModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header justify-content-between">
+                    <h1 class="modal-title fs-5" id="solidColorsModal">Gradient Colors</h1>
+                    <i class="fa-solid fa-x cursor-pointer" data-bs-dismiss="modal" aria-label="Close"></i>
+                </div>
+                <p-scrollPanel [style]="{ width: '100%', height: '300px'}">
+                    <div class="modal-body">
+                        <div class="row gx-2 gy-3">
+                            <div class="col-6">
+                                <button class="colors pick-color rounded btn w-100" style=" background: #939393;"
+                                    (click)="op.toggle($event)">
+                                    <i class="fa-solid fa-eye-dropper fs-5 text-white"></i>
+                                </button>
+                                <p-overlayPanel #op [baseZIndex]="1000">
+                                    <ng-template pTemplate="content">
+                                        <p-colorPicker [(ngModel)]="color"
+                                            (onChange)="pickColor($event)"></p-colorPicker>
+                                    </ng-template>
+                                </p-overlayPanel>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-one rounded btn w-100" style="background: #5b5c63;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-two rounded btn w-100" style="background: #151e9a;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-three rounded btn w-100" style=" background: #265073;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-four rounded btn w-100" style="background: #9B4444;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-five rounded btn w-100" style="background: #0D9276;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-six rounded btn w-100" style=" background: #5433b0;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-seven rounded btn w-100" style="background: #747264;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-eight rounded btn w-100" style="background: #0B60B0;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="colors color-night rounded btn w-100" style=" background: #A367B1;"
+                                    (click)="changeColor($event)" data-bs-dismiss="modal"></button>
+                            </div>
+                        </div>
+                    </div>
+                </p-scrollPanel>
+            </div>
+        </div>
+    </div>
+</div>

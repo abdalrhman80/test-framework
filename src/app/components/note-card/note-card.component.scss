@@ -1,0 +1,58 @@
+@import '../../variables.scss';
+
+.accordion-note {
+    padding: 16px 14px 16px 16px;
+    background-color: rgba($color: $color-black, $alpha: 0.8);
+    box-shadow: 1px 1px 5px rgba($color: $color-black, $alpha: 0.5);
+    color: rgba($color: $color-white, $alpha: 0.9);
+    border-color: transparent;
+    transition: all 0.3s;
+
+    &:hover {
+        color: $color-white;
+        background-color: rgba($color: $color-black, $alpha: 0.9);
+    }
+}
+
+.show-icons {
+    .note-actions i {
+        opacity: 1;
+    }
+}
+
+:host ::ng-deep .p-accordion {
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 4px;
+
+    .p-accordion-header .p-accordion-header-link {
+        @extend .accordion-note;
+    }
+
+    .p-accordion-content {
+        border-color: transparent;
+        color: rgba($color: $color-white, $alpha: 0.9);
+        background-color: rgba($color: $color-black, $alpha: 0.7);
+    }
+
+    &:hover {
+        @extend .show-icons;
+    }
+}
+
+.noContentNote {
+    @extend .accordion-note;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    &:hover {
+        @extend .show-icons;
+    }
+}
+
+.note-actions.note-actions-accordion {
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    z-index: 5;
+}
